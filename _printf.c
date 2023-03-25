@@ -14,4 +14,12 @@ int _printf(const char *format, ...)
 	char buffer[BUFF_SIZE];
 
 	va_start(list, format);
+	for (i = 0; format && &format[i] != '\0'; i++)
+	{
+		if (format[i] != '%')
+		{}
+		printed++;
+	}
+
+	va_end(list, format);
 }
