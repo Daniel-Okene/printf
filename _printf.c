@@ -1,7 +1,7 @@
 #inlcude "main.h"
 
 /**
- * _printf - a clone of the standard printf function
+ * _printf - a prototype of the standard printf function
  * @format: conversion specifiers
  *
  * Return: number of characters printed
