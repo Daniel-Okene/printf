@@ -42,7 +42,7 @@ typedef struct fmt fmt_t;
 
 /* Main function prototypes*/
 int _printf(const char *format, ...);
-int print_handler(const char *fmt, int *i, va_list list,
+int hsndle_print(const char *fmt, int *i, va_list list,
 		char buffer[], int flags, int width int precision, int size);
 
 /****** Sub function prototypes ******/
@@ -52,7 +52,7 @@ int print_char(va_list types, char buffer[], int flags,
 		int width, int precision, int size);
 int print_string(va_list types, cahr buffer[], int flags,
 		int width, int precision, int size);
-int print_none(va_list types, cahr buffer[], int flags,
+int print_percent(va_list types, cahr buffer[], int flags,
 		int width, int precision, int size);
 
 /* Functions to print numbers */
