@@ -42,7 +42,7 @@ typedef struct fmt fmt_t;
 
 /* Main function prototypes*/
 int _printf(const char *format, ...);
-int hsndle_print(const char *fmt, int *i, va_list list,
+int handle_print(const char *fmt, int *i, va_list list,
 		char buffer[], int flags, int width, int precision, int size);
 
 /****** Sub function prototypes ******/
