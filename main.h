@@ -30,7 +30,7 @@
 struct fmt
 {
 	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int,);
+	int (*fn)(va_list, char[], int, int, int, int);
 };
 
 /**
@@ -43,16 +43,16 @@ typedef struct fmt fmt_t;
 /* Main function prototypes*/
 int _printf(const char *format, ...);
 int hsndle_print(const char *fmt, int *i, va_list list,
-		char buffer[], int flags, int width int precision, int size);
+		char buffer[], int flags, int width, int precision, int size);
 
 /****** Sub function prototypes ******/
 
 /* Functions to handle chars, none and strings */
 int print_char(va_list types, char buffer[], int flags,
 		int width, int precision, int size);
-int print_string(va_list types, cahr buffer[], int flags,
+int print_string(va_list types, char buffer[], int flags,
 		int width, int precision, int size);
-int print_percent(va_list types, cahr buffer[], int flags,
+int print_percent(va_list types, char buffer[], int flags,
 		int width, int precision, int size);
 
 /* Functions to print numbers */
