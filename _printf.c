@@ -1,4 +1,6 @@
-#inlcude "main.h"
+#include "main.h"
+
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - a prototype of the standard printf function
@@ -9,11 +11,10 @@
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_char = 0;
-	int flags, width,, precision, size, buff_ind = 0;
+	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
 
-	/* checking if format is NULL */
 	if (format == NULL)
 		return (-1);
 
@@ -25,9 +26,7 @@ int _printf(const char *format, ...)
 		/* checking for the starting point of a format specifier */
 		if (format[i] != '%')
 		{
-			/* storing the format specifier in the buffer */
 			buffer[buff_ind++] = format[i];
-			/* checking for buffer overfloe */
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
 			printed_chars++;
@@ -48,13 +47,13 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	pritn_buffer(buffer, &buff_ind);
+	print_buffer(buffer, &buff_ind);
 	va_end(list);
 	return (printed_cahrs);
 }
 
 /**
- * prints the contents of the buffer if it existd
+ * print_buffer - prints the contents of the buffer if it existd
  * @buffer: array of chars
  * @buff_ind: index at which to add next char, represents the length
  */
